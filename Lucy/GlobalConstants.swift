@@ -17,3 +17,7 @@ struct RobotConstants {
     static let WelcomeBotName = "Lucy"
     static let LucyAgent = "Lucy"
 }
+
+struct ConstraintConstants {
+    static let DefaultNavigationBarHeight = CGFloat(44)
+}
