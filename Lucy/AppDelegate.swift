@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var navigationController: UINavigationController!
         let testHomepage = true
         if testHomepage {
-            let homepageController = HomepageController()
-            navigationController = UINavigationController(rootViewController: homepageController)
+            let homeController = HomeController()
+            navigationController = UINavigationController(rootViewController: homeController)
         } else {
             let loginSignupController = LoginSignupController()
             navigationController = UINavigationController(rootViewController: loginSignupController)

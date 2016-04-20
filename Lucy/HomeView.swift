@@ -1,5 +1,5 @@
 //
-//  HomepageView.swift
+//  HomeView.swift
 //  Lucy
 //
 //  Created by Xinxing Jiang on 4/20/16.
@@ -8,14 +8,28 @@
 
 import UIKit
 
-class HomepageView: UIView {
+class HomeView: UIView {
 
+    // MARK: - Fields
+    
+    weak var parentView: UIView!
+    
     convenience init(parentView: UIView) {
-        self.init()        
+        self.init()
+        self.parentView = parentView
+        parentView.backgroundColor = Constants.BackgroundColor
         initSubviews()
     }
     
+    // MARK: - Private methods
+    
     private func initSubviews() {
         
+    }
+    
+    // MARK: - Constants
+    
+    private struct Constants {
+        static let BackgroundColor = UIColor.whiteColor()
     }
 }
