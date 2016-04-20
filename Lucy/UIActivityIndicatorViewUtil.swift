@@ -14,10 +14,10 @@ class UIActivityIndicatorViewUtil {
         spinner.hidesWhenStopped = true
         view.addSubview(spinner)
         
-        spinner.translatesAutoresizingMaskIntoConstraints = false        
-        let centerXCon = NSLayoutConstraint(item: spinner, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0)
-        let centerYCon = NSLayoutConstraint(item: spinner, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0)
-        view.addConstraints([centerXCon, centerYCon])
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
+        spinner.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+        spinner.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor).active = true
         
         return spinner
     }
