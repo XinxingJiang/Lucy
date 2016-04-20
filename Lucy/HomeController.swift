@@ -1,5 +1,5 @@
 //
-//  HomepageController.swift
+//  HomeController.swift
 //  Lucy
 //
 //  Created by Xinxing Jiang on 4/20/16.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class HomepageController: UIViewController {
+class HomeController: UIViewController {
 
-    var homepageView: HomepageView!
+    var homeView: HomeView!
     var settingsController: SettingsController!
     
     // MARK: - VC life cycle
     
     override func loadView() {
         super.loadView()
-        homepageView = HomepageView(parentView: view)
+        homeView = HomeView(parentView: view)
     }
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class HomepageController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - LeftBarButtonItem Selector
+    // MARK: - LeftBarButtonItem selector
     
     func clickSettings() {
         if settingsController == nil {
@@ -46,7 +46,7 @@ class HomepageController: UIViewController {
 
     // MARK: - Constants
     
-    private struct Constants {
+    struct Constants {
         static let NavigationTitle = "Lucy"
         static let LeftBarButtonItemTitle = "Settings"
         static let LeftBarButtonItemSelector = "clickSettings"
