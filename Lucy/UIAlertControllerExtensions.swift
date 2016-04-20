@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+extension UIAlertController {
+    func addCancelAction() {
+        self.addAction(UIAlertAction(title: Constants.CancelActionTitle, style: .Cancel, handler: nil))
+    }
+    
+    private struct Constants {
+        static let CancelActionTitle = "Cancel"
+    }
+}
