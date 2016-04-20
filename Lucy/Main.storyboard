@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="dPW-O1-v6I">
+            <objects>
+                <tableViewController id="p9h-4x-Xri" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2wI-Hl-lE7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receiverCell" id="xPT-Kp-i8q" customClass="ChatCell" customModule="Lucy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xPT-Kp-i8q" id="h1z-Ae-vsz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="02R-jz-UgN">
+                                            <rect key="frame" x="8" y="7" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="PMe-Mg-8WJ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-z6-ifG">
+                                            <rect key="frame" x="51" y="7" width="240" height="30"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="nh5-aV-P5g"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="oe7-PL-pAL">
+                                            <rect key="frame" x="62" y="11" width="51" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="51" id="wnI-6O-Ps4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oe7-PL-pAL" firstAttribute="centerY" secondItem="02R-jz-UgN" secondAttribute="centerY" id="3AU-iN-cqu"/>
+                                        <constraint firstItem="oe7-PL-pAL" firstAttribute="leading" secondItem="02R-jz-UgN" secondAttribute="trailing" constant="24" id="QQj-RP-oUg"/>
+                                        <constraint firstItem="02R-jz-UgN" firstAttribute="centerY" secondItem="h1z-Ae-vsz" secondAttribute="centerY" id="W5b-90-YfF"/>
+                                        <constraint firstItem="VEO-z6-ifG" firstAttribute="bottom" secondItem="02R-jz-UgN" secondAttribute="bottom" id="aye-Am-hCG"/>
+                                        <constraint firstItem="02R-jz-UgN" firstAttribute="top" secondItem="h1z-Ae-vsz" secondAttribute="topMargin" constant="-1" id="cGD-Z4-Gr4"/>
+                                        <constraint firstItem="VEO-z6-ifG" firstAttribute="leading" secondItem="02R-jz-UgN" secondAttribute="trailing" constant="13" id="cXw-RE-a8T"/>
+                                        <constraint firstItem="02R-jz-UgN" firstAttribute="leading" secondItem="h1z-Ae-vsz" secondAttribute="leadingMargin" id="iwP-xW-TFq"/>
+                                        <constraint firstItem="VEO-z6-ifG" firstAttribute="top" secondItem="02R-jz-UgN" secondAttribute="top" id="uAe-UN-ziw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="02R-jz-UgN" id="iag-4m-AMN"/>
+                                    <outlet property="backgroundImageView" destination="VEO-z6-ifG" id="xHL-6e-xdI"/>
+                                    <outlet property="messageLabel" destination="oe7-PL-pAL" id="y68-ud-brv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p9h-4x-Xri" id="1LE-0q-CLI"/>
+                            <outlet property="delegate" destination="p9h-4x-Xri" id="vNX-5h-ooa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2S-Ec-D2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="272"/>
+        </scene>
+    </scenes>
+</document>
