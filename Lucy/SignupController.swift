@@ -19,14 +19,12 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
     var confirmationCode: String!
     var whatYouWant: String!
     var tellMeMore: String!
-    var howMuch: String!
+    var priceRange: String!
     
     // MARK: - VC life cycle
     
     override func loadView() {
         super.loadView()
-        hideNavigationBar = false
-        self.navigationItem.title = RobotConstants.WelcomeBotName
     }
     
     override func viewDidLoad() {
@@ -41,9 +39,14 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
         sendGetYourNameMessage()
     }
     
-    // MARK: - EaseMessageViewControllerDelegate
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar = false
+        navigationItem.title = RobotConstants.WelcomeBotName
+    }
     
-    //
+    // MARK: - EaseMessageViewControllerDelegate
+        
     /*
      messageModel.nickname: display name on the chat
      messageModel.avatarImage: avatar 
@@ -52,12 +55,10 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
      */
     
     func messageViewController(tableView: UITableView!, cellForMessageModel messageModel: IMessageModel!) -> UITableViewCell! {
-//        let cell = EaseMessageCell()
-//        cell.ava
         messageModel.nickname = "" // hide nickname
-        if messageModel.isSender { // is user
+        if messageModel.isSender { // sender is user
             
-        } else { // is Lucy
+        } else { // sender is Lucy
             messageModel.avatarImage = Constants.LucyAvatar
         }
         return nil
@@ -88,8 +89,8 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
             super.didSendText(String(format: Constants.TellMeMoreResponseMessage, tellMeMore))
             sendGetPriceRangeMessage()
         case Constants.GetPriceRangeTag:
-            howMuch = text
-            super.sendTextMessage(String(format: Constants.HowMuchResponseMessage, howMuch))
+            priceRange = text
+            super.sendTextMessage(String(format: Constants.HowMuchResponseMessage, priceRange))
             sendProductImageMessage()
         default:
             super.didSendText(text)
@@ -195,7 +196,7 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
     
     // MARK: - Constants
     
-    struct Constants {
+    private struct Constants {
         static let GetYourNameTag = 0
         static let GetYourNumberTag = 1
         static let GetYourConfirmationCodeTag = 2
