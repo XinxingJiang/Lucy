@@ -218,8 +218,11 @@
 		B7B73FCF1CC505010027730D /* EaseConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B73F591CC505010027730D /* EaseConversationCell.m */; };
 		B7F2DDA41CC5BFA20023BC17 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDA31CC5BFA20023BC17 /* SignupController.swift */; };
 		B7F2DDA61CC5D53F0023BC17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7F2DDA51CC5D53F0023BC17 /* LaunchScreen.storyboard */; };
-		B7F2DDAF1CC75C4C0023BC17 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDAE1CC75C4C0023BC17 /* ChatCell.swift */; };
 		B7F2DDB11CC761AD0023BC17 /* EMMessageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDB01CC761AD0023BC17 /* EMMessageUtil.swift */; };
+		B7F2DDB71CC7662C0023BC17 /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDB61CC7662C0023BC17 /* HomepageController.swift */; };
+		B7F2DDB91CC766520023BC17 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDB81CC766520023BC17 /* HomepageView.swift */; };
+		B7F2DDBD1CC78BF80023BC17 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDBC1CC78BF80023BC17 /* SettingsController.swift */; };
+		B7F2DDC01CC791290023BC17 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDBF1CC791290023BC17 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -631,8 +634,11 @@
 		B7B73F591CC505010027730D /* EaseConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseConversationCell.m; sourceTree = "<group>"; };
 		B7F2DDA31CC5BFA20023BC17 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		B7F2DDA51CC5D53F0023BC17 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B7F2DDAE1CC75C4C0023BC17 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatCell.swift; path = ../ChatCell.swift; sourceTree = "<group>"; };
 		B7F2DDB01CC761AD0023BC17 /* EMMessageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMMessageUtil.swift; sourceTree = "<group>"; };
+		B7F2DDB61CC7662C0023BC17 /* HomepageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
+		B7F2DDB81CC766520023BC17 /* HomepageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		B7F2DDBC1CC78BF80023BC17 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		B7F2DDBF1CC791290023BC17 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +705,8 @@
 		B741C2A31CC21AA000C8ECEE /* Lucy */ = {
 			isa = PBXGroup;
 			children = (
+				B7F2DDBA1CC78B940023BC17 /* Settings */,
+				B7F2DDB21CC7652E0023BC17 /* Homepage */,
 				B78A0B6A1CC4951000784EF6 /* LoginSignup */,
 				B7F2DDA11CC5BF6A0023BC17 /* Signup */,
 				B78A0B6E1CC496B000784EF6 /* Extensions */,
@@ -1581,7 +1589,64 @@
 		B7F2DDAD1CC758040023BC17 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B7F2DDAE1CC75C4C0023BC17 /* ChatCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B7F2DDB21CC7652E0023BC17 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDB31CC765380023BC17 /* Models */,
+				B7F2DDB41CC7653E0023BC17 /* Views */,
+				B7F2DDB51CC765440023BC17 /* Controllers */,
+			);
+			name = Homepage;
+			sourceTree = "<group>";
+		};
+		B7F2DDB31CC765380023BC17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B7F2DDB41CC7653E0023BC17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDB81CC766520023BC17 /* HomepageView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B7F2DDB51CC765440023BC17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDB61CC7662C0023BC17 /* HomepageController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B7F2DDBA1CC78B940023BC17 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDBE1CC791170023BC17 /* Views */,
+				B7F2DDBB1CC78B9D0023BC17 /* Controllers */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B7F2DDBB1CC78B9D0023BC17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDBC1CC78BF80023BC17 /* SettingsController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B7F2DDBE1CC791170023BC17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDBF1CC791290023BC17 /* SettingsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1807,6 +1872,7 @@
 				B7B73F971CC505010027730D /* PSTCollectionViewCell.m in Sources */,
 				B7B73F9D1CC505010027730D /* PSTCollectionViewUpdateItem.m in Sources */,
 				B7B73FBB1CC505010027730D /* EaseBaseMessageCell.m in Sources */,
+				B7F2DDB91CC766520023BC17 /* HomepageView.swift in Sources */,
 				B7B73F7B1CC505010027730D /* UIView+MJExtension.m in Sources */,
 				B7B73FC51CC505010027730D /* EaseBubbleView+Voice.m in Sources */,
 				B7B73FCA1CC505010027730D /* EaseTextView.m in Sources */,
@@ -1828,6 +1894,7 @@
 				B7B73F641CC505010027730D /* EMVoiceConverter.mm in Sources */,
 				B7B73F631CC505010027730D /* wav.mm in Sources */,
 				B7B73FB21CC505010027730D /* EaseEmotionManager.m in Sources */,
+				B7F2DDBD1CC78BF80023BC17 /* SettingsController.swift in Sources */,
 				B78A0B631CC4927E00784EF6 /* GlobalConstants.swift in Sources */,
 				B7B73FAD1CC505010027730D /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				B7B73F981CC505010027730D /* PSTCollectionViewController.m in Sources */,
@@ -1868,6 +1935,7 @@
 				B78A0B7D1CC496F100784EF6 /* DateUtil.swift in Sources */,
 				B7B73FA51CC505010027730D /* EaseMessageModel.m in Sources */,
 				B7B73FA11CC505010027730D /* PSTGridLayoutSection.m in Sources */,
+				B7F2DDC01CC791290023BC17 /* SettingsView.swift in Sources */,
 				B7B73FAA1CC505010027730D /* UIViewController+DismissKeyboard.m in Sources */,
 				B7B73F941CC505010027730D /* UIView+EMWebCacheOperation.m in Sources */,
 				B7B73FA01CC505010027730D /* PSTGridLayoutRow.m in Sources */,
@@ -1890,7 +1958,6 @@
 				B78A0B821CC496F100784EF6 /* PasswordUtil.swift in Sources */,
 				B7B73F961CC505010027730D /* PSTCollectionView.m in Sources */,
 				B78A0B811CC496F100784EF6 /* MathUtil.swift in Sources */,
-				B7F2DDAF1CC75C4C0023BC17 /* ChatCell.swift in Sources */,
 				B7B73F611CC505010027730D /* EMCDDeviceManagerBase.m in Sources */,
 				B7B73FC71CC505010027730D /* EaseChatToolbar.m in Sources */,
 				B7B73F7A1CC505010027730D /* UIScrollView+MJRefresh.m in Sources */,
@@ -1904,6 +1971,7 @@
 				B7B73FCD1CC505010027730D /* EaseChatBarMoreView.m in Sources */,
 				B7B73FC31CC505010027730D /* EaseBubbleView+Text.m in Sources */,
 				B7B73FCF1CC505010027730D /* EaseConversationCell.m in Sources */,
+				B7F2DDB71CC7662C0023BC17 /* HomepageController.swift in Sources */,
 				B7B73F9B1CC505010027730D /* PSTCollectionViewItemKey.m in Sources */,
 				B7B73FB01CC505010027730D /* EaseEmojiEmoticons.m in Sources */,
 				B7B73F691CC505010027730D /* MJRefreshAutoFooter.m in Sources */,
