@@ -16,6 +16,7 @@ class InvitationView: UIView {
     var shareButton: UIButton!
     var copyButton: UIButton!
     var promoCodeTextField: UITextField!
+    var promoCodeLabel: UILabel!
     
     convenience init(parentView: UIView) {
         self.init()
@@ -34,6 +35,7 @@ class InvitationView: UIView {
         initShareButton()
         initCopyButton()
         initPromoCodeTextField()
+        initPromoCodeLabel()
     }
     
     private func initShareButton() {
@@ -90,6 +92,18 @@ class InvitationView: UIView {
         promoCodeTextField.heightAnchor.constraintEqualToAnchor(copyButton.heightAnchor).active = true
         promoCodeTextField.bottomAnchor.constraintEqualToAnchor(copyButton.bottomAnchor).active = true
     }
+    
+    private func initPromoCodeLabel() {
+        promoCodeLabel = UILabel()
+        self.addSubview(promoCodeLabel)
+        
+        promoCodeLabel.text = Constants.PromoCodeLabelText
+        
+        promoCodeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        promoCodeLabel.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor).active = true
+        promoCodeLabel.bottomAnchor.constraintEqualToAnchor(promoCodeTextField.topAnchor, constant: Constants.PromoCodeLabelBottomConstant).active = true
+    }
 
     // MARK: - Constants
     
@@ -108,5 +122,8 @@ class InvitationView: UIView {
         static let CopyButtonTitle = "Copy"
         
         static let PromoCodeTextFieldTextColor = UIColor.grayColor()
+        
+        static let PromoCodeLabelText = "Your Promo Code"
+        static let PromoCodeLabelBottomConstant = CGFloat(-10)
     }
 }
