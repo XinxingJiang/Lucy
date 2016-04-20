@@ -14,14 +14,15 @@ class LoginSignupController: UIViewController {
     
     var loginSignupView: LoginSignupView!
     
+    // MARK: - VC life cycle
+    
     override func loadView() {
         super.loadView()
-        loginSignupView = LoginSignupView(parentView: self.view)
+        loginSignupView = LoginSignupView(parentView: view)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,8 +36,6 @@ class LoginSignupController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
     }
     
     // MARK: - Login button selector

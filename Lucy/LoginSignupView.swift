@@ -10,33 +10,27 @@ import UIKit
 
 class LoginSignupView: UIView {
 
+    // MARK: - Fields
+    
     weak var parentView: UIView!
     var label: UILabel!
     var loginButton: UIButton!
     var signupButton: UIButton!
     
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     convenience init(parentView: UIView) {
         self.init()
         self.parentView = parentView
         parentView.backgroundColor = Constants.BackgroundColor
+        parentView.addSubview(self)
+        
+        setSameSizeWithView(parentView)
+
         initSubviews()
     }
     
+    // MARK: - Private methods
+    
     private func initSubviews() {
-        parentView.addSubview(self)
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        let widthCon = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: parentView, attribute: .Width, multiplier: 1, constant: 0)
-        let heightCon = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: parentView, attribute: .Height, multiplier: 1, constant: 0)
-        parentView.addConstraints([widthCon, heightCon])
-        
         initLabel()
         initLoginButton()
         initSignupButton()
@@ -48,9 +42,9 @@ class LoginSignupView: UIView {
         self.addSubview(label)
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        let centerYCon = NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: Constants.LabelCenterYConstants)
-        let centerXCon = NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0)
-        self.addConstraints([centerYCon, centerXCon])
+        
+        label.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor).active = true
+        label.centerYAnchor.constraintEqualToAnchor(self.centerYAnchor, constant: Constants.LabelCenterYConstants).active = true
     }
     
     private func initLoginButton() {
@@ -64,11 +58,11 @@ class LoginSignupView: UIView {
         loginButton.addTarget(nil, action: Selector(Constants.LoginButtonSelector), forControlEvents: .TouchUpInside)
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false
-        let heightCon = NSLayoutConstraint(item: loginButton, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: Constants.LoginButtonHeight)
-        let leadingCon = NSLayoutConstraint(item: loginButton, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1, constant: Constants.LoginButtonLeadingConstant)
-        let trailingCon = NSLayoutConstraint(item: loginButton, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: Constants.LoginButtonTrailingConstant)
-        let bottomCon = NSLayoutConstraint(item: loginButton, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: Constants.LoginButtonBottomConstant)
-        self.addConstraints([heightCon, leadingCon, trailingCon, bottomCon])
+        
+        loginButton.heightAnchor.constraintEqualToConstant(Constants.LoginButtonHeight).active = true
+        loginButton.leadingAnchor.constraintEqualToAnchor(self.leadingAnchor, constant: Constants.LoginButtonLeadingConstant).active = true
+        loginButton.trailingAnchor.constraintEqualToAnchor(self.centerXAnchor, constant: Constants.LoginButtonTrailingConstant).active = true
+        loginButton.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: Constants.LoginButtonBottomConstant).active = true
     }
     
     private func initSignupButton() {
@@ -82,14 +76,16 @@ class LoginSignupView: UIView {
         signupButton.addTarget(nil, action: Selector(Constants.SignupButtonSelector), forControlEvents: .TouchUpInside)
         
         signupButton.translatesAutoresizingMaskIntoConstraints = false
-        let heightCon = NSLayoutConstraint(item: signupButton, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: Constants.SignupButtonHeight)
-        let leadingCon = NSLayoutConstraint(item: signupButton, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: Constants.SignupButtonLeadingConstant)
-        let trailingCon = NSLayoutConstraint(item: signupButton, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: Constants.SignupButtonTrailingConstant)
-        let bottomCon = NSLayoutConstraint(item: signupButton, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: Constants.SignupButtonBottomConstant)
-        self.addConstraints([heightCon, leadingCon, trailingCon, bottomCon])
+        
+        signupButton.heightAnchor.constraintEqualToAnchor(loginButton.heightAnchor).active = true
+        signupButton.leadingAnchor.constraintEqualToAnchor(self.centerXAnchor, constant: Constants.SignupButtonLeadingConstant).active = true
+        signupButton.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor, constant: Constants.SignupButtonTrailingConstant).active = true
+        signupButton.bottomAnchor.constraintEqualToAnchor(loginButton.bottomAnchor).active = true
     }
     
-    struct Constants {
+    // MARK: - Constants
+    
+    private struct Constants {
         static let BackgroundColor = UIColor.whiteColor()
         
         static let LabelText = "The easiest way to shopping"
@@ -110,9 +106,7 @@ class LoginSignupView: UIView {
         static let SignupButtonBackgroundColor = LoginButtonBackgroundColor
         static let SignupButtonCornerRadius = LoginButtonCornerRadius
         static let SignupButtonSelector = "signup"
-        static let SignupButtonHeight = LoginButtonHeight
         static let SignupButtonLeadingConstant = -LoginButtonTrailingConstant
         static let SignupButtonTrailingConstant = -LoginButtonLeadingConstant
-        static let SignupButtonBottomConstant = LoginButtonBottomConstant
     }
 }
