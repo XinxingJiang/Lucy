@@ -16,10 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var emClient: EMClient = EMClient.sharedClient()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let loginSignupController = LoginSignupController()
-        let navigationController = UINavigationController(rootViewController: loginSignupController)
+        var navigationController: UINavigationController!
+        let testHomepage = true
+        if testHomepage {
+            let homepageController = HomepageController()
+            navigationController = UINavigationController(rootViewController: homepageController)
+        } else {
+            let loginSignupController = LoginSignupController()
+            navigationController = UINavigationController(rootViewController: loginSignupController)
+        }
+        
         window?.rootViewController = navigationController
         
         // Setup Easemob
