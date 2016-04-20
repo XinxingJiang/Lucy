@@ -27,7 +27,7 @@ class SettingsView: UIView {
         
         initSubviews()
     }
-    
+        
     // MARK: - Private methods
     
     private func initSubviews() {
@@ -80,16 +80,16 @@ class SettingsView: UIView {
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
         
         settingsTableView.topAnchor.constraintEqualToAnchor(nicknameLabel.bottomAnchor, constant: Constants.SettingsTableViewTopConstant).active = true
-        settingsTableView.heightAnchor.constraintEqualToConstant(Constants.SettingsTableViewCellHeight * CGFloat(Constants.SettingsTableViewCellNumber)).active = true
+        settingsTableView.heightAnchor.constraintEqualToConstant(Constants.SettingsTableViewCellHeight * CGFloat(Constants.SettingsTableViewCellNumber) + Constants.SettingsTableViewTopConstant).active = true
         settingsTableView.widthAnchor.constraintEqualToAnchor(self.widthAnchor).active = true
     }
     
     // MARK: - Constants
     
-    private struct Constants {
+    struct Constants {
         static let PhotoButtonTitle = "Add Photo"
         static let PhotoButtonTitleColor = UIColor.grayColor()
-        static let PhotoButtonTopConstant = CGFloat(20) + ConstraintConstants.DefaultNavigationBarHeight
+        static let PhotoButtonTopConstant = CGFloat(20)
         static let PhotoButtonHeight = CGFloat(60)
         static let PhotoButtonWidth = PhotoButtonHeight
         static let PhotoButtonSelector = "clickPhotoButton"
@@ -99,6 +99,7 @@ class SettingsView: UIView {
         
         static let SettingsTableViewTopConstant = CGFloat(20)
         static let SettingsTableViewCellHeight = CGFloat(40)
-        static let SettingsTableViewCellNumber = 6
+        static let SettingsTexts = ["Home", "Invite Friends", "Payments", "Shipping", "Feedback", "Logout"]
+        static let SettingsTableViewCellNumber = SettingsTexts.count
     }
 }

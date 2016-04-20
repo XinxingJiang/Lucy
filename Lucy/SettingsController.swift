@@ -8,12 +8,13 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+class SettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - Fields
     
     var settingsView: SettingsView!
     var alertController: UIAlertController!
+    var invitationController: InvitationController!
     
     // MARK: - VC life cycle
 
@@ -24,12 +25,13 @@ class SettingsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsView.settingsTableView.delegate = self
+        settingsView.settingsTableView.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        hideNavigationBar = false
-        setBackButtonTitle(title: Constants.BackButtonTitle)
+        hideNavigationBar = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -51,9 +53,38 @@ class SettingsController: UIViewController {
             alertController.addAction(UIAlertAction(title: Constants.ActionTitle2, style: .Default, handler: { action in
                 
             }))
-            alertController.addAction(UIAlertAction(title: Constants.ActionTitle3, style: .Cancel, handler: nil))
+            alertController.addCancelAction()
         }
         presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            popViewController()
+        case 1:
+            if invitationController == nil {
+                invitationController = InvitationController()
+            }
+            pushViewController(viewController: invitationController)
+        default:
+            print("cool")
+        }
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SettingsView.Constants.SettingsTableViewCellNumber
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = SettingsView.Constants.SettingsTexts[indexPath.row]
+        return cell
     }
 
     // MARK: - Constants
