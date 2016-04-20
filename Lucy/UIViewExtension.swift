@@ -16,4 +16,12 @@ extension UIView {
             self.hidden = !newValue
         }
     }
+    
+    // self should be descendant of anotherView
+    func setSameSizeWithView(anotherView: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.widthAnchor.constraintEqualToAnchor(anotherView.widthAnchor).active = true
+        self.heightAnchor.constraintEqualToAnchor(anotherView.heightAnchor).active = true
+    }
 }
