@@ -16,6 +16,7 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
     var alertController: UIAlertController!
     var invitationController: InvitationController!
     var paymentsController: PaymentsController!
+    var shippingController: ShippingController!
     
     // MARK: - VC life cycle
 
@@ -76,6 +77,11 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
                 paymentsController = PaymentsController()
             }
             pushViewController(viewController: paymentsController)
+        case 3:
+            if shippingController == nil {
+                shippingController = ShippingController()
+            }
+            pushViewController(viewController: shippingController)
         default:
             print("cool")
         }

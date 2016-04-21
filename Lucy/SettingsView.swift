@@ -98,7 +98,7 @@ class SettingsView: UIView {
         static let NicknameLabelTopConstant = CGFloat(20)
         
         static let SettingsTableViewTopConstant = CGFloat(20)
-        static let SettingsTableViewCellHeight = CGFloat(40)
+        static let SettingsTableViewCellHeight = CGFloat(44)
         static let SettingsTexts = ["Home", "Invite Friends", "Payments", "Shipping", "Feedback", "Logout"]
         static let SettingsTableViewCellNumber = SettingsTexts.count
     }
