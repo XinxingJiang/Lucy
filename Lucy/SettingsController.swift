@@ -15,6 +15,7 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
     var settingsView: SettingsView!
     var alertController: UIAlertController!
     var invitationController: InvitationController!
+    var paymentsController: PaymentsController!
     
     // MARK: - VC life cycle
 
@@ -70,6 +71,11 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
                 invitationController = InvitationController()
             }
             pushViewController(viewController: invitationController)
+        case 2:
+            if paymentsController == nil {
+                paymentsController = PaymentsController()
+            }
+            pushViewController(viewController: paymentsController)
         default:
             print("cool")
         }
@@ -85,8 +91,8 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = UITableViewCell()
         cell.textLabel?.text = SettingsView.Constants.SettingsTexts[indexPath.row]
         return cell
-    }
-
+    }        
+    
     // MARK: - Constants
     
     private struct Constants {

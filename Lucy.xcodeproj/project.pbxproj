@@ -226,6 +226,8 @@
 		B7F2DDC51CC7E92E0023BC17 /* InvitationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDC41CC7E92E0023BC17 /* InvitationController.swift */; };
 		B7F2DDC71CC7ED970023BC17 /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDC61CC7ED970023BC17 /* InvitationView.swift */; };
 		B7F2DDC91CC7F97A0023BC17 /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDC81CC7F97A0023BC17 /* UIAlertControllerExtensions.swift */; };
+		B7F2DDCF1CC868DA0023BC17 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDCE1CC868DA0023BC17 /* PaymentsController.swift */; };
+		B7F2DDD11CC868EA0023BC17 /* PaymentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDD01CC868EA0023BC17 /* PaymentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -645,6 +647,8 @@
 		B7F2DDC41CC7E92E0023BC17 /* InvitationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationController.swift; sourceTree = "<group>"; };
 		B7F2DDC61CC7ED970023BC17 /* InvitationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		B7F2DDC81CC7F97A0023BC17 /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
+		B7F2DDCE1CC868DA0023BC17 /* PaymentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsController.swift; sourceTree = "<group>"; };
+		B7F2DDD01CC868EA0023BC17 /* PaymentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -711,6 +715,7 @@
 		B741C2A31CC21AA000C8ECEE /* Lucy */ = {
 			isa = PBXGroup;
 			children = (
+				B7F2DDCA1CC8687C0023BC17 /* Payments */,
 				B7F2DDC11CC7E9050023BC17 /* Invitation */,
 				B7F2DDBA1CC78B940023BC17 /* Settings */,
 				B7F2DDB21CC7652E0023BC17 /* Home */,
@@ -1684,6 +1689,39 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		B7F2DDCA1CC8687C0023BC17 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDCD1CC868960023BC17 /* Models */,
+				B7F2DDCC1CC868910023BC17 /* Views */,
+				B7F2DDCB1CC868880023BC17 /* Controllers */,
+			);
+			name = Payments;
+			sourceTree = "<group>";
+		};
+		B7F2DDCB1CC868880023BC17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDCE1CC868DA0023BC17 /* PaymentsController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B7F2DDCC1CC868910023BC17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDD01CC868EA0023BC17 /* PaymentsView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B7F2DDCD1CC868960023BC17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1960,6 +1998,7 @@
 				B7B73F8C1CC505010027730D /* MKAnnotationView+EMWebCache.m in Sources */,
 				B7B73FCB1CC505010027730D /* EaseFaceView.m in Sources */,
 				B7B73FC21CC505010027730D /* EaseBubbleView+Location.m in Sources */,
+				B7F2DDD11CC868EA0023BC17 /* PaymentsView.swift in Sources */,
 				B7B73F8B1CC505010027730D /* EMSDWebImagePrefetcher.m in Sources */,
 				B7B73F6B1CC505010027730D /* MJRefreshComponent.m in Sources */,
 				B7B73FB81CC505010027730D /* EaseUsersListViewController.m in Sources */,
@@ -2008,6 +2047,7 @@
 				B7B73FC31CC505010027730D /* EaseBubbleView+Text.m in Sources */,
 				B7B73FCF1CC505010027730D /* EaseConversationCell.m in Sources */,
 				B7F2DDB71CC7662C0023BC17 /* HomeController.swift in Sources */,
+				B7F2DDCF1CC868DA0023BC17 /* PaymentsController.swift in Sources */,
 				B7B73F9B1CC505010027730D /* PSTCollectionViewItemKey.m in Sources */,
 				B7B73FB01CC505010027730D /* EaseEmojiEmoticons.m in Sources */,
 				B7B73F691CC505010027730D /* MJRefreshAutoFooter.m in Sources */,
