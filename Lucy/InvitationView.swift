@@ -78,8 +78,7 @@ class InvitationView: UIView {
         promoCodeTextField = UITextField()
         self.addSubview(promoCodeTextField)
         
-        // TO DO: use real promo code later
-        promoCodeTextField.text = "iamsocool"
+        promoCodeTextField.text = getPromoCode()
         promoCodeTextField.textAlignment = .Center
         promoCodeTextField.textColor = Constants.PromoCodeTextFieldTextColor
         promoCodeTextField.layer.borderWidth = shareButton.layer.borderWidth
@@ -91,6 +90,11 @@ class InvitationView: UIView {
         promoCodeTextField.trailingAnchor.constraintEqualToAnchor(copyButton.leadingAnchor).active = true
         promoCodeTextField.heightAnchor.constraintEqualToAnchor(copyButton.heightAnchor).active = true
         promoCodeTextField.bottomAnchor.constraintEqualToAnchor(copyButton.bottomAnchor).active = true
+    }
+    
+    // TO DO: use real promo code later
+    private func getPromoCode() -> String {
+        return "iamsocool"
     }
     
     private func initPromoCodeLabel() {
