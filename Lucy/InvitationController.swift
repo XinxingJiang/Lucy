@@ -21,7 +21,7 @@ class InvitationController: UIViewController {
         super.loadView()
         invitationView = InvitationView(parentView: view)
         navigationItem.title = Constants.NavigationItemTitle
-        let leftBarButtonItem = UIBarButtonItem(title: HomeController.Constants.LeftBarButtonItemTitle, style: .Plain, target: self, action: Selector(HomeController.Constants.LeftBarButtonItemSelector))
+        let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: Selector(HomeController.Constants.LeftBarButtonItemSelector))
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
