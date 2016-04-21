@@ -20,4 +20,5 @@ struct RobotConstants {
 
 struct ConstraintConstants {
     static let DefaultNavigationBarHeight = CGFloat(44)
+    static let StatusBarHeight = CGFloat(20)
 }

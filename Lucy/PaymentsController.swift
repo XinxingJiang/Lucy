@@ -88,9 +88,5 @@ class PaymentsController: UIViewController, UITableViewDelegate, UITableViewData
         static let RightBarButtonItemSelector = "addPaymentMethod"
         
         static let ApplePayImage = UIImage(named: "apple_pay")
-        
-//        static let SuccessfulCopyMessage = "✅Copied to clipboard."
-        
-//        static let CancelActionTitle = "Cancel"
     }
 }

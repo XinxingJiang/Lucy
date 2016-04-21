@@ -228,6 +228,11 @@
 		B7F2DDC91CC7F97A0023BC17 /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDC81CC7F97A0023BC17 /* UIAlertControllerExtensions.swift */; };
 		B7F2DDCF1CC868DA0023BC17 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDCE1CC868DA0023BC17 /* PaymentsController.swift */; };
 		B7F2DDD11CC868EA0023BC17 /* PaymentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDD01CC868EA0023BC17 /* PaymentsView.swift */; };
+		B7F2DDD61CC884680023BC17 /* ShippingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDD51CC884680023BC17 /* ShippingController.swift */; };
+		B7F2DDD81CC884DF0023BC17 /* ShippingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDD71CC884DF0023BC17 /* ShippingView.swift */; };
+		B7F2DDDA1CC88B6B0023BC17 /* AddDeliveryAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDD91CC88B6B0023BC17 /* AddDeliveryAddressController.swift */; };
+		B7F2DDDC1CC8BAD70023BC17 /* AddDeliveryAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDDB1CC8BAD70023BC17 /* AddDeliveryAddressView.swift */; };
+		B7F2DDDE1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDDD1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -649,6 +654,11 @@
 		B7F2DDC81CC7F97A0023BC17 /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
 		B7F2DDCE1CC868DA0023BC17 /* PaymentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsController.swift; sourceTree = "<group>"; };
 		B7F2DDD01CC868EA0023BC17 /* PaymentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsView.swift; sourceTree = "<group>"; };
+		B7F2DDD51CC884680023BC17 /* ShippingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingController.swift; sourceTree = "<group>"; };
+		B7F2DDD71CC884DF0023BC17 /* ShippingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingView.swift; sourceTree = "<group>"; };
+		B7F2DDD91CC88B6B0023BC17 /* AddDeliveryAddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeliveryAddressController.swift; sourceTree = "<group>"; };
+		B7F2DDDB1CC8BAD70023BC17 /* AddDeliveryAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeliveryAddressView.swift; sourceTree = "<group>"; };
+		B7F2DDDD1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeliveryAddressCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -715,6 +725,7 @@
 		B741C2A31CC21AA000C8ECEE /* Lucy */ = {
 			isa = PBXGroup;
 			children = (
+				B7F2DDD21CC884450023BC17 /* Shipping */,
 				B7F2DDCA1CC8687C0023BC17 /* Payments */,
 				B7F2DDC11CC7E9050023BC17 /* Invitation */,
 				B7F2DDBA1CC78B940023BC17 /* Settings */,
@@ -1722,6 +1733,34 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		B7F2DDD21CC884450023BC17 /* Shipping */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDD41CC8845A0023BC17 /* Controllers */,
+				B7F2DDD31CC884540023BC17 /* Views */,
+			);
+			name = Shipping;
+			sourceTree = "<group>";
+		};
+		B7F2DDD31CC884540023BC17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDD71CC884DF0023BC17 /* ShippingView.swift */,
+				B7F2DDDB1CC8BAD70023BC17 /* AddDeliveryAddressView.swift */,
+				B7F2DDDD1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B7F2DDD41CC8845A0023BC17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDD51CC884680023BC17 /* ShippingController.swift */,
+				B7F2DDD91CC88B6B0023BC17 /* AddDeliveryAddressController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1929,6 +1968,7 @@
 				B7B73FA81CC505010027730D /* NSDateFormatter+Category.m in Sources */,
 				B7B73FB71CC505010027730D /* EaseRefreshTableViewController.m in Sources */,
 				B7B73F731CC505010027730D /* MJRefreshBackStateFooter.m in Sources */,
+				B7F2DDDE1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift in Sources */,
 				B7F2DDC71CC7ED970023BC17 /* InvitationView.swift in Sources */,
 				B7F2DDA41CC5BFA20023BC17 /* SignupController.swift in Sources */,
 				B7B73FBE1CC505010027730D /* EaseMessageTimeCell.m in Sources */,
@@ -1970,6 +2010,7 @@
 				B7F2DDBD1CC78BF80023BC17 /* SettingsController.swift in Sources */,
 				B78A0B631CC4927E00784EF6 /* GlobalConstants.swift in Sources */,
 				B7B73FAD1CC505010027730D /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
+				B7F2DDDC1CC8BAD70023BC17 /* AddDeliveryAddressView.swift in Sources */,
 				B7B73F981CC505010027730D /* PSTCollectionViewController.m in Sources */,
 				B7B73F6F1CC505010027730D /* MJRefreshAutoNormalFooter.m in Sources */,
 				B78A0B6C1CC4955D00784EF6 /* LoginSignupView.swift in Sources */,
@@ -2002,6 +2043,7 @@
 				B7B73F8B1CC505010027730D /* EMSDWebImagePrefetcher.m in Sources */,
 				B7B73F6B1CC505010027730D /* MJRefreshComponent.m in Sources */,
 				B7B73FB81CC505010027730D /* EaseUsersListViewController.m in Sources */,
+				B7F2DDDA1CC88B6B0023BC17 /* AddDeliveryAddressController.swift in Sources */,
 				B7F2DDC51CC7E92E0023BC17 /* InvitationController.swift in Sources */,
 				B7B73FB31CC505010027730D /* FixFopen.c in Sources */,
 				B78A0B841CC496F100784EF6 /* UIActivityIndicatorViewUtil.swift in Sources */,
@@ -2032,6 +2074,7 @@
 				B7B73F911CC505010027730D /* UIImage+EMWebP.m in Sources */,
 				B78A0B821CC496F100784EF6 /* PasswordUtil.swift in Sources */,
 				B7B73F961CC505010027730D /* PSTCollectionView.m in Sources */,
+				B7F2DDD61CC884680023BC17 /* ShippingController.swift in Sources */,
 				B78A0B811CC496F100784EF6 /* MathUtil.swift in Sources */,
 				B7B73F611CC505010027730D /* EMCDDeviceManagerBase.m in Sources */,
 				B7B73FC71CC505010027730D /* EaseChatToolbar.m in Sources */,
@@ -2050,6 +2093,7 @@
 				B7F2DDCF1CC868DA0023BC17 /* PaymentsController.swift in Sources */,
 				B7B73F9B1CC505010027730D /* PSTCollectionViewItemKey.m in Sources */,
 				B7B73FB01CC505010027730D /* EaseEmojiEmoticons.m in Sources */,
+				B7F2DDD81CC884DF0023BC17 /* ShippingView.swift in Sources */,
 				B7B73F691CC505010027730D /* MJRefreshAutoFooter.m in Sources */,
 				B7B73F9E1CC505010027730D /* PSTGridLayoutInfo.m in Sources */,
 				B78A0B7E1CC496F100784EF6 /* DefaultsUtil.swift in Sources */,
