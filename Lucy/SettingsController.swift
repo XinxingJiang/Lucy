@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Fields
     
@@ -50,14 +50,33 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         if alertController == nil {
             alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
             alertController.addAction(UIAlertAction(title: Constants.ActionTitle1, style: .Default, handler: { action in
-                
+                self.takePhoto()
             }))
             alertController.addAction(UIAlertAction(title: Constants.ActionTitle2, style: .Default, handler: { action in
-                
+                self.choosePhoto()
             }))
             alertController.addCancelAction()
         }
         presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        var image = editingInfo?[UIImagePickerControllerEditedImage] as? UIImage
+        if image == nil {
+            image = editingInfo?[UIImagePickerControllerOriginalImage] as? UIImage
+        }
+        settingsView.photoButton.setBackgroundImage(image, forState: .Normal)        
+        settingsView.photoButton.setTitle("", forState: .Normal) // clear title
+        if picker.sourceType == UIImagePickerControllerSourceType.Camera {
+            UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        }
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - UITableViewDelegate
@@ -97,7 +116,33 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = UITableViewCell()
         cell.textLabel?.text = SettingsView.Constants.SettingsTexts[indexPath.row]
         return cell
-    }        
+    }
+    
+    // MARK: - Private methods
+    
+    private func takePhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            let picker = UIImagePickerController()
+            picker.sourceType = .Camera
+            // if video, check media types
+            picker.delegate = self
+            picker.allowsEditing = true
+            presentViewController(picker, animated: true, completion: nil)
+        }
+    }
+    
+    private func choosePhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let picker = UIImagePickerController()
+            picker.sourceType = .PhotoLibrary
+            // if video, check media types
+            picker.delegate = self
+            picker.allowsEditing = true
+            presentViewController(picker, animated: true, completion: {
+                print(123)
+            })
+        }
+    }
     
     // MARK: - Constants
     

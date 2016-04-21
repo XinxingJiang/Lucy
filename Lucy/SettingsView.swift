@@ -46,6 +46,7 @@ class SettingsView: UIView {
         photoButton.titleLabel?.numberOfLines = 0
         
         photoButton.layer.cornerRadius = 5.0
+        photoButton.layer.masksToBounds = true
         photoButton.layer.borderColor = UIColor.grayColor().CGColor
         photoButton.layer.borderWidth = 1.0
         
