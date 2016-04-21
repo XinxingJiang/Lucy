@@ -80,7 +80,7 @@ class InvitationView: UIView {
         
         // TO DO: use real promo code later
         promoCodeTextField.text = "iamsocool"
-        promoCodeTextField.textAlignment = .Left
+        promoCodeTextField.textAlignment = .Center
         promoCodeTextField.textColor = Constants.PromoCodeTextFieldTextColor
         promoCodeTextField.layer.borderWidth = shareButton.layer.borderWidth
         promoCodeTextField.userInteractionEnabled = false
