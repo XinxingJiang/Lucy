@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SettingsController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 
     // MARK: - Fields
     
@@ -17,6 +18,7 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
     var invitationController: InvitationController!
     var paymentsController: PaymentsController!
     var shippingController: ShippingController!
+    var mailController: MFMailComposeViewController!
     
     // MARK: - VC life cycle
 
@@ -101,6 +103,18 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
                 shippingController = ShippingController()
             }
             pushViewController(viewController: shippingController)
+        case 4:
+            if !MFMailComposeViewController.canSendMail() {
+                print(Constants.MailServiceNotAvailableMessage)
+                return
+            }
+            if mailController == nil {
+                mailController = MFMailComposeViewController()
+                mailController.mailComposeDelegate = self
+                mailController.setToRecipients(Constants.Recipients)
+                mailController.setSubject(String(format: Constants.Subject, getVersion(), getBuild()))
+            }
+            presentViewController(mailController, animated: true, completion: nil)
         default:
             print("cool")
         }
@@ -116,6 +130,12 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = UITableViewCell()
         cell.textLabel?.text = SettingsView.Constants.SettingsTexts[indexPath.row]
         return cell
+    }
+    
+    // MARK: - MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Private methods
@@ -144,6 +164,16 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    private func getVersion() -> String {
+        // TODO: get real version
+        return "1.0"
+    }
+    
+    private func getBuild() -> String {
+        // TODO: get real build
+        return "1000"
+    }
+    
     // MARK: - Constants
     
     private struct Constants {
@@ -152,5 +182,9 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
         static let ActionTitle1 = "Take a Photo"
         static let ActionTitle2 = "Add from Photo Library"
         static let ActionTitle3 = "Cancel"
+        
+        static let MailServiceNotAvailableMessage = "Mail services are not available"
+        static let Recipients = ["jiangxinxing09@gmail.com"]
+        static let Subject = "Lucy App Feedback (Version: %@ Build: %@)"
     }
 }
