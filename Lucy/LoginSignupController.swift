@@ -14,7 +14,7 @@ class LoginSignupController: UIViewController {
     
     var emClient: EMClient = EMClient.sharedClient()
     var loginSignupView: LoginSignupView!
-    var settingsController: SettingsController!
+    var homeController: HomeController!
     
     // MARK: - VC life cycle
     
@@ -43,10 +43,10 @@ class LoginSignupController: UIViewController {
     // MARK: - Login button selector
     
     func login() {
-        if settingsController == nil {
-            settingsController = SettingsController()
+        if homeController == nil {
+            homeController = HomeController()
         }
-        pushViewController(viewController: settingsController)        
+        pushViewController(viewController: homeController)
     }
     
     // MARK: - Signup button selector

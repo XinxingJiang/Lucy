@@ -117,6 +117,7 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
             presentViewController(mailController, animated: true, completion: nil)
         case 5:
             popViewController()
+            popViewController()            
         default:
             print("cool")
         }
