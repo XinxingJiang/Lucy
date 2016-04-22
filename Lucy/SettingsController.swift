@@ -115,6 +115,8 @@ class SettingsController: UIViewController, UITableViewDelegate, UITableViewData
                 mailController.setSubject(String(format: Constants.Subject, getVersion(), getBuild()))
             }
             presentViewController(mailController, animated: true, completion: nil)
+        case 5:
+            popViewController()
         default:
             print("cool")
         }
