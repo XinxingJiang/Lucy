@@ -30,6 +30,11 @@ class HomeController: UIViewController {
         let leftBarButtonItem = UIBarButtonItem(title: Constants.LeftBarButtonItemTitle, style: .Plain, target: self, action: Selector(Constants.LeftBarButtonItemSelector))
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,6 +47,13 @@ class HomeController: UIViewController {
             settingsController = SettingsController()
         }
         pushViewController(viewController: settingsController)
+    }
+    
+    // MARK: - SendRequestButton selector
+    
+    func sendRequest() {
+        let chatController = ChatController(conversationChatter: "test003", conversationType: EMConversationTypeChat)
+        pushViewController(viewController: chatController)
     }
 
     // MARK: - Constants
