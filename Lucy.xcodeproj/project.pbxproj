@@ -233,6 +233,7 @@
 		B7F2DDDA1CC88B6B0023BC17 /* AddDeliveryAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDD91CC88B6B0023BC17 /* AddDeliveryAddressController.swift */; };
 		B7F2DDDC1CC8BAD70023BC17 /* AddDeliveryAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDDB1CC8BAD70023BC17 /* AddDeliveryAddressView.swift */; };
 		B7F2DDDE1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDDD1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift */; };
+		B7F2DDE61CC9EF3A0023BC17 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2DDE51CC9EF3A0023BC17 /* ChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -659,6 +660,7 @@
 		B7F2DDD91CC88B6B0023BC17 /* AddDeliveryAddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeliveryAddressController.swift; sourceTree = "<group>"; };
 		B7F2DDDB1CC8BAD70023BC17 /* AddDeliveryAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeliveryAddressView.swift; sourceTree = "<group>"; };
 		B7F2DDDD1CC8CE7C0023BC17 /* AddDeliveryAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeliveryAddressCell.swift; sourceTree = "<group>"; };
+		B7F2DDE51CC9EF3A0023BC17 /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -725,6 +727,7 @@
 		B741C2A31CC21AA000C8ECEE /* Lucy */ = {
 			isa = PBXGroup;
 			children = (
+				B7F2DDE31CC9EF040023BC17 /* Chat */,
 				B7F2DDD21CC884450023BC17 /* Shipping */,
 				B7F2DDCA1CC8687C0023BC17 /* Payments */,
 				B7F2DDC11CC7E9050023BC17 /* Invitation */,
@@ -1761,6 +1764,22 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		B7F2DDE31CC9EF040023BC17 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDE41CC9EF0B0023BC17 /* Controllers */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		B7F2DDE41CC9EF0B0023BC17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7F2DDE51CC9EF3A0023BC17 /* ChatController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2027,6 +2046,7 @@
 				B7B73FC81CC505010027730D /* EaseChatToolbarItem.m in Sources */,
 				B7B73FA61CC505010027730D /* EaseUserModel.m in Sources */,
 				B7B73FBF1CC505010027730D /* EaseBubbleView+File.m in Sources */,
+				B7F2DDE61CC9EF3A0023BC17 /* ChatController.swift in Sources */,
 				B7B73F8E1CC505010027730D /* UIButton+EMWebCache.m in Sources */,
 				B7B73F711CC505010027730D /* MJRefreshBackGifFooter.m in Sources */,
 				B78A0B731CC496E000784EF6 /* UIViewControllerExtension.swift in Sources */,

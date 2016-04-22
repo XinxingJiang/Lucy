@@ -61,5 +61,33 @@
             </objects>
             <point key="canvasLocation" x="655" y="272"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Zlb-jU-42k">
+            <objects>
+                <viewController id="v2v-b3-TSu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iDV-Z6-pyk"/>
+                        <viewControllerLayoutGuide type="bottom" id="WmC-c9-tJ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GiM-3s-Kfq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCM-c2-4yr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="slX-CN-Oxu">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="K7u-Li-Qj8"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsq-eQ-Ldk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312" y="258"/>
+        </scene>
     </scenes>
 </document>
