@@ -25,6 +25,8 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
     
     override func loadView() {
         super.loadView()
+        let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: Selector("clickStop"))
+        navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
     override func viewDidLoad() {
@@ -36,13 +38,14 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
         inputTextView = easeChatToolbar.inputTextView
         currentUsername = emClient.currentUsername
         
+        navigationItem.title = RobotConstants.WelcomeBotName
+        
         sendGetYourNameMessage()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigationBar = false
-        navigationItem.title = RobotConstants.WelcomeBotName
     }
     
     // MARK: - EaseMessageViewControllerDelegate
@@ -99,7 +102,10 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func clickStop() {
+        popViewController()
     }
     
     // MARK: - Private methods
@@ -206,7 +212,6 @@ class SignupController: EaseMessageViewController, EaseMessageViewControllerDele
         
         static let LucyAvatar = UIImage(named: "lucy_avatar")
         
-        static let BackButtonTitle = "Back"
         static let BackButtonSelector = "back"
         
         static let DefaultPlaceholder = "Write a message..."
